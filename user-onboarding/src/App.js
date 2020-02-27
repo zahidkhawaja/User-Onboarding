@@ -7,8 +7,11 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-          Learn React
+          <h1>User Onboarding</h1>
       </header>
+      <div className = "App-body">
+        
+      </div>
     </div>
   );
 }
