@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { withFormik, Form, Field, yupToFormErrors } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 
 const UserForm = ({values, handleChange, touched, errors, status}) => {
+    const [users, setUsers] = useState([]);
+    useEffect(() => {
+        console.log("Status has changed", status);
+        status && setUsers(users => [...users, status]);
+    }, [status]);
     return (
+        <div>
         <Form>
             <label htmlFor = "name"> Name
             <Field id = "name" type = "text" name = "name" placeholder = "Name" />
@@ -36,6 +42,14 @@ const UserForm = ({values, handleChange, touched, errors, status}) => {
             <br/>
             <button type = "submit">Submit</button>
         </Form>
+        {users.map(user => (
+            <div>
+            <p>Name: {user.name}</p>
+            <p>Email: {user.email}</p>
+            <p>Password: {user.password}</p>
+            </div>
+        ))}
+        </div>
     );
 };
 
