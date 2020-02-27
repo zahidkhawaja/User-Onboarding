@@ -10,43 +10,48 @@ const UserForm = ({values, handleChange, touched, errors, status}) => {
         status && setUsers(users => [...users, status]);
     }, [status]);
     return (
-        <div>
+        <div className = "form">
+           
         <Form>
             <label htmlFor = "name"> Name
             <Field id = "name" type = "text" name = "name" placeholder = "Name" />
             {touched.name && errors.name && (
-                <p>{errors.name}</p>
+                <p className = "error">{errors.name}</p>
             )}
             </label>
             <br/>
             <label htmlFor = "email"> Email
             <Field id = "email" type = "email" name = "email" placeholder = "Email" />
             {touched.email && errors.email && (
-                <p>{errors.email}</p>
+                <p className = "error"> {errors.email}</p>
             )}
             </label>
             <br/>
             <label htmlFor = "password"> Password
             <Field id = "password" type = "password" name = "password" placeholder = "Password" />
             {touched.password && errors.password && (
-                <p>{errors.password}</p>
+                <p className = "error">{errors.password}</p>
             )}
             </label>
             <br/>
             <label htmlFor = "terms"> Agree to Terms of Services
             <Field id = "terms" type = "checkbox" name = "terms"/>
             {touched.terms && errors.terms && (
-                <p>{errors.terms}</p>
+                <p className = "error">{errors.terms}</p>
             )}
             </label>
             <br/>
             <button type = "submit">Submit</button>
+            
         </Form>
+        
         {users.map(user => (
-            <div>
-            <p>Name: {user.name}</p>
-            <p>Email: {user.email}</p>
-            <p>Password: {user.password}</p>
+            <div className = "returned-container"> 
+            <div className = "returned">
+            <h5>Name: {user.name}</h5>
+            <h5>Email: {user.email}</h5>
+            <h5>Password: {user.password}</h5>
+            </div>
             </div>
         ))}
         </div>
