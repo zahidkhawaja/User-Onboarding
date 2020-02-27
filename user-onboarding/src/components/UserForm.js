@@ -48,9 +48,9 @@ const UserForm = ({values, handleChange, touched, errors, status}) => {
         {users.map(user => (
             <div className = "returned-container"> 
             <div className = "returned">
-            <h5>Name: {user.name}</h5>
-            <h5>Email: {user.email}</h5>
-            <h5>Password: {user.password}</h5>
+            <p>Name: {user.name}</p>
+            <p>Email: {user.email}</p>
+            <p>Password: {user.password}</p>
             </div>
             </div>
         ))}
