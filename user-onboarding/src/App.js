@@ -1,7 +1,6 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Form from "./components/Form";
+import UserForm from "./components/UserForm";
 
 function App() {
   return (
@@ -10,7 +9,7 @@ function App() {
           <h1>User Onboarding</h1>
       </header>
       <div className = "App-body">
-        
+        <UserForm />
       </div>
     </div>
   );
